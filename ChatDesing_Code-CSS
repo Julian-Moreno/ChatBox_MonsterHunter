@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+{
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+  	width:100%;
+    overflow: hidden;
+}
+
+body {
+    background: {background_color};
+    font-family: 'Archivo Black';
+    font-weight: 700;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: {text_color};
+}
+
+#log>div {
+  margin-bottom: 12px;
+  padding: 12px 34px 10px 40px;
+  animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+  -webkit-animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+#log>div:nth-child(odd){
+  justify-content: left;
+  text-align: left;
+	background-image: url('https://raw.githubusercontent.com/Julian-Moreno/ChatBox_MonsterHunter/ef8df73e898208a310e3d3c9fda7ff39dbc9a4e7/bubble-left.svg'), linear-gradient(90deg, rgba(64, 64, 64, 0.7) 33%, rgba(64, 64, 64, 0.5) 65%, rgba(64, 64, 64, 0.32) 81%, rgba(64, 64, 64, 0) 100%);
+	background-repeat: no-repeat;
+  background-position: top left, left;
+  background-size: 42%, 90%;
+}
+
+#log>div:nth-child(even){
+  justify-content: right;
+  text-align: right;
+	background-image: url('https://raw.githubusercontent.com/Julian-Moreno/ChatBox_MonsterHunter/ef8df73e898208a310e3d3c9fda7ff39dbc9a4e7/bubble-right.svg'), linear-gradient(270deg, rgba(64, 64, 64, 0.7) 33%, rgba(64, 64, 64, 0.5) 65%, rgba(64, 64, 64, 0.32) 81%, rgba(64, 64, 64, 0) 100%);
+	background-repeat: no-repeat;
+  background-position: top right, right;
+  background-size: 42% auto, 90% auto;
+}
+
+.name {
+  color: {text_color};
+}
+
+.colon {
+    display: none;
+}
+
+#log {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .message,#log .meta {
+    vertical-align: top;
+  	padding-left: 0.7em;
+  	padding-right: 0.7em;
+    padding-bottom: 0.1em;
+}
+
+#log .meta {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#log .message {
+  	display: block;
+    word-wrap: break-word;
+}
+
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+}
